@@ -22,10 +22,10 @@ export default {
   },
   methods: {
     increment() {
-      axios.patch(process.env.VUE_APP_BACKEND_URL + '/value')
+      axios.post(process.env.VUE_APP_BACKEND_URL + '/value')
     },
     get() {
-      axios.get(process.env.VUE_APP_BACKEND_URL + '/value').then(response => this.value = response)
+      axios.get(process.env.VUE_APP_BACKEND_URL + '/value').then(response => this.value = response.data)
     }
   }
 }
