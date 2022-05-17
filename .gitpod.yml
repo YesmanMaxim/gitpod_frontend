@@ -5,4 +5,4 @@ tasks:
     command: yarn serve --port 3000
 ports:
   - port: 3000
-    onOpen: open-preview
+    onOpen: open-browser
