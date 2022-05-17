@@ -3,3 +3,6 @@ tasks:
     before: yarn install
     init: yarn build
     command: yarn serve --port 3000
+ports:
+  - port: 3000
+    onOpen: open-preview
