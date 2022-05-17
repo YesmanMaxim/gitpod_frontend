@@ -1,9 +1,26 @@
+image: gitpod/workspace-java-17
+
+additionalRepositories:
+  - url: https://github.com/YesmanMaxim/gitpod_backend
+    checkoutLocation: /gitpod-frontend/gitpod_backend
+
 tasks:
+  - name: BackEnd
+    before: cd ../gitpod_backend
+    init: ./gradlew build
+    command: ./gradlew run
+    openIn: bottom
   - name: FrontEnd
     init: |
       yarn install
       yarn build
-    command: yarn serve --port 3000
+    command: |
+      export export VUE_APP_BACKEND_URL=`gp url 8080`
+      yarn serve --port 3000
+    openIn: bottom
+
 ports:
   - port: 3000
     onOpen: open-browser
+  - port: 8080
+    visibility: public
