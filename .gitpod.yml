@@ -1,8 +1,9 @@
-image: gitpod/workspace-java-17
+image:
+  file: .gitpod.Dockerfile
 
 additionalRepositories:
   - url: https://github.com/YesmanMaxim/gitpod_backend
-    checkoutLocation: /gitpod-frontend/gitpod_backend
+    checkoutLocation: /gitpod_frontend/gitpod_backend
 
 tasks:
   - name: BackEnd
