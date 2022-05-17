@@ -1,7 +1,8 @@
 tasks:
   - name: FrontEnd
-    before: yarn install
-    init: yarn build
+    init: |
+      yarn install
+      yarn build
     command: yarn serve --port 3000
 ports:
   - port: 3000
